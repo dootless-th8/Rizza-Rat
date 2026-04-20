@@ -13,7 +13,7 @@ from stats_menu import StatsMenu
 
 from pytmx.util_pygame import load_pygame
 from random import randint, choice
-import random
+
 # requirement: pytmx
 
 class Game:
@@ -95,7 +95,7 @@ class Game:
         self.success_buy_sfx = pygame.mixer.Sound(join('audio', 'success_buy.mp3'))
         self.success_buy_sfx.set_volume(self.gen_vol / 8)
         ## Shop phase bg
-        self.vendouring_sfx = pygame.mixer.Sound(join('audio', f'shop_{random.randint(1,3)}.mp3'))
+        self.vendouring_sfx = pygame.mixer.Sound(join('audio', f'shop_{randint(1,3)}.mp3'))
         self.vendouring_sfx.set_volume(self.gen_vol / 3)
         ## Main bg music
         self.bg_sfx = pygame.mixer.Sound(join('audio', 'bg.mp3'))
@@ -348,7 +348,7 @@ class Game:
             alive = len(self.enemy_sprites)
 
             if remaining_to_spawn > 0 and alive < self.enemy_per_spawn:
-                spawn_amount = min(random.randint(1, 3), remaining_to_spawn, self.enemy_per_spawn - alive)            
+                spawn_amount = min(randint(1, 3), remaining_to_spawn, self.enemy_per_spawn - alive)            
                 for _ in range(spawn_amount):
                     enemy_type = choice(list(self.ENEMY_CLASSES.keys()))
                     enemy_class = self.ENEMY_CLASSES[enemy_type]

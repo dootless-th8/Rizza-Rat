@@ -1,0 +1,10 @@
+pygame-ce
+pytmx.util_pygame
+random
+os
+csv
+matplotlib
+datetime
+numpy
+math
+json
