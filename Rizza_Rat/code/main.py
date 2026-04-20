@@ -617,6 +617,11 @@ class Game:
  
 def main():
     # Main stuffs
+
+    from os import chdir, path
+    chdir(path.dirname(__file__))
+    chdir('..')    
+    
     pygame.init()
     pygame.mixer.set_num_channels(16)  # 16 channels: 6 reserved + 8 enemy pool + 2 spare
     
